@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navbarSize: 64px;
+  --dark      : #292524;
+  --darkAlt   : #1c1917;
+  --light     : #eee;
+  --accent    : #fbbf24;
+  --accentDark: #a04c14;
+  --bgColor   : var(--dark);
+  scroll-behavior: smooth;
+}
+
+/* this padding helps to show all the element on the top when is target */
+*:target:not( .App, #contact ) {
+  padding-top: calc(64px + 1rem);
+}
+
+@layer base {
+  body {
+    @apply bg-gradient-to-t bg-center bg-cover bg-no-repeat
+    from-indigo-200 via-indigo-100 to-indigo-200
+    dark:from-dark dark:via-darkAlt dark:to-dark;
+  }
+}
+
+@layer utilities {
+  .heading {
+    @apply border-t border-b text-lg md:text-2xl font-bold py-2 text-center mb-4
+    border-accentDark text-dark
+    dark:border-accent dark:text-light;
+  }
+
+  .custom-container {
+    @apply p-4 rounded-md dark:bg-slate-700 bg-slate-50 shadow-md transition-all;
+  }
+
+  .custom-container:hover {
+    @apply scale-[1.02] dark:bg-slate-800 bg-slate-100
+  }
+
+  .paragraph {
+    @apply text-center mb-4  text-base md:text-lg text-dark dark:text-light
+  }
+
+  .paragraph:last-of-type {
+    @apply mb-0
+  }
+}
+
+/* animations */
+
+.rotate {
+  animation: 30s linear infinite rotate;
+  will-change: transform;
+}
+
+.rotate-reverse {
+  animation: 30s linear infinite rotateReverse;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateReverse {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
