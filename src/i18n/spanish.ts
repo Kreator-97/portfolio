@@ -44,17 +44,19 @@ export const spanish = {
       ]
     },
     reactEcosystem: {
-      title: 'Ecocistema de React',
+      title: 'Ecosistema de React',
       description: 'Estoy especializado en la creación de interfaces de usuarios utilizando la librería de React y el ecosistema construído alrededor.',
       icons: [
         { iconURL: '/icons/react.svg', title: 'React' },
         { iconURL: '/icons/redux.svg', title: 'Redux' },
         { iconURL: '/icons/nextjs.svg', title: 'NextJS' },
+        { iconURL: '/icons/remix.svg', title: 'RemixJS' },
       ],
       details: [
         'Creación de aplicaciones web con React',
         'Manejo de estados con Redux',
         'Desarrollo de aplicaciones web con NextJS',
+        'Desarrollo de aplicaciones web con RemixJS',
       ]
     },
     typescript: {
@@ -73,11 +75,13 @@ export const spanish = {
         { iconURL: '/icons/nodejs.svg', title: 'Express' },
         { iconURL: '/icons/nextjs.svg', title: 'NextJs' },
         { iconURL: '/icons/graphql.svg', title: 'GraphQL' },
+        { iconURL: '/icons/nestjs.svg', title: 'NestJS' },
       ],
       details: [
         'Manejo y creación de servicios REST',
         'Manejo y creación de servidores GraphQL usando Apollo Server',
         'Creación de aplicaciones web rápidas y optimizadas usando NextJS',
+        'Creación de aplicaciones escalables y mantenibles usando NestJS',
       ]
     },
     docker: {
@@ -96,10 +100,15 @@ export const spanish = {
     shopify: {
       title: 'Shopify',
       description: 'Tengo experiencia profesional desarrollando soluciones de comercio electrónico para clientes que utilizan la plataforma de Shopify para su modelo de negocio.',
+      icons: [
+        { iconURL: '/icons/shopify.svg', title: 'Shopify' },
+        { iconURL: '/icons/remix.svg', title: 'Remix' },
+      ],
       details: [
         'Creación y personalización de temas',
         'Creación de sitios altamente personalizables y accesibles',
-        'Creación de aplicaciones de Shopify privadas' 
+        'Creación de aplicaciones de Shopify privadas',
+        'Creación de aplicaciones de Shopify públicas',
       ]
     },
     otherTools: {
@@ -214,18 +223,28 @@ export const spanish = {
     },
   },
   learning: {
-    title: 'Learning',
+    title: 'Aprendizaje',
     description: 'Constantemente estoy aprendiendo más sobre el diseño y el desarrollo web. Actualmente me encuentro aprendiendo las siguiente tecnologías y habilidades: ',
     items: [
       {
-        title: 'PHP',
-        iconURL: '/icons/php.svg',
-        description: 'PHP es uno de los lenguajes más importantes en el desarrollo web y posee una gran comunidad y herramientas que permiten resolver las necesidades de los clientes de forma fácil. Me estoy involucrando en esta gran comunidad aprendiendo las bases del lenguaje para después comenzar a probar herramientas más complejas que faciliten el desarrollo de nuevos proyectos.'
+        title: 'C#',
+        iconURL: '/icons/csharp.svg',
+        description: 'C# es uno de los lenguages más populares en el desarrollo de aplicaciones de escritorio y videojuegos. Actualmente estoy aprendiendo C# para poder desarrollar aplicaciones de escritorio y videojuegos'
       },
       {
-        title: 'NESTJS',
-        iconURL: '/icons/nestjs.svg',
-        description: 'Este es el framework de JavaScript/TypeScript que no sabia que necesitaba. Ofrece una gran cantidad de soluciones para crear aplicaciones del servidor escalables junto a una muy buena experiencia de desarrollo. Sin duda es una gran herramienta que me está ayudando a mejorar como desarrollador, pues a la vez que se aprende NestJS aprendes escribir código limpio.'
+        title: 'React Native',
+        iconURL: '/icons/react.svg',
+        description: 'React native es un framework de desarrollo de aplicaciones móviles multiplataforma. Actualmente estoy aprendiendo React Native para poder desarrollar aplicaciones móviles para Android y iOS.'
+      },
+      {
+        title: 'Amazon Web Services',
+        iconURL: '/icons/aws.svg',
+        description: 'Amazon Web Services es una plataforma de servicios en la nube que ofrece servicios de computación, almacenamiento y bases de datos. Actualmente estoy aprendiendo AWS para poder desplegar aplicaciones en la nube que sean escalables.'
+      },
+      {
+        title: 'Astro',
+        iconURL: '/icons/astro.svg',
+        description: 'Astro es una herramienta de construcción de sitios web que permite la creación de sitios web estáticos y dinámicos. Actualmente estoy aprendiendo Astro para poder crear sitios web más rápidos y optimizados.'
       }
     ]
   },

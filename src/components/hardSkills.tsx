@@ -49,9 +49,15 @@ export const HardSkills = ({lang}: { lang: string }) => {
           }
         >
           <div className='py-4 flex gap-8 justify-center'>
-            <IconWithText iconURL={'/icons/react.svg'} title='React' />
-            <IconWithText iconURL={'/icons/redux.svg'} title='Redux' />
-            <IconWithText iconURL={'/icons/nextjs.svg'} title='NextJS' />
+            {
+              t.hardSkills.reactEcosystem.icons.map((icon) => (
+                <IconWithText
+                  key={icon.title}
+                  iconURL={icon.iconURL}
+                  title={icon.title}
+                />
+              ))
+            }
           </div>
           
           <h3 className='text-dark dark:text-light text-center text-lg font-bold mb-2'>
@@ -149,7 +155,16 @@ export const HardSkills = ({lang}: { lang: string }) => {
           }
         >
           <div className='py-4 flex gap-8 justify-center'>
-            <IconWithText iconURL={'/icons/shopify.svg'} title='shopify' />
+            {
+              t.hardSkills.shopify.icons.map((icon) => (
+                <IconWithText
+                  key={icon.title}
+                  iconURL={icon.iconURL}
+                  title={icon.title}
+                />
+              ))
+            }
+            {/* <IconWithText iconURL={'/icons/shopify.svg'} title='shopify' /> */}
           </div>
           
           <h3 className='text-dark dark:text-light text-center text-lg font-bold mb-2'>

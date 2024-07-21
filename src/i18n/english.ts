@@ -2,7 +2,7 @@ import { calculateYears } from '@/utils'
 
 export const english = {
   common: {
-    proficientIn: 'Competente en:',
+    proficientIn: 'Proficient in:',
   },
   navbar: {
     home: 'Home',
@@ -50,11 +50,13 @@ export const english = {
         { iconURL: '/icons/react.svg', title: 'React' },
         { iconURL: '/icons/redux.svg', title: 'Redux' },
         { iconURL: '/icons/nextjs.svg', title: 'NextJS' },
+        { iconURL: '/icons/remix.svg', title: 'RemixJS' },
       ],
       details: [
         'Creating web applications with React',
         'State management with Redux',
         'Developing web applications with NextJS',
+        'Developing web applications with RemixJS',
       ]
     },
     typescript: {
@@ -73,11 +75,13 @@ export const english = {
         { iconURL: '/icons/nodejs.svg', title: 'Express' },
         { iconURL: '/icons/nextjs.svg', title: 'NextJs' },
         { iconURL: '/icons/graphql.svg', title: 'GraphQL' },
+        { iconURL: '/icons/nestjs.svg', title: 'NestJS' },
       ],
       details: [
         'Handling and creating REST services',
         'Handling and creating GraphQL servers using Apollo Server',
         'Creating fast and optimized web applications using NextJS',
+        'Creating scalable and maintainable applications with NestJS',
       ]
     },
     docker: {
@@ -96,10 +100,15 @@ export const english = {
     shopify: {
       title: 'Shopify',
       description: 'I have knowledge in the creation and customization of themes, creation of highly customizable and accessible sites, and creation of private Shopify applications.',
+      icons: [
+        { iconURL: '/icons/shopify.svg', title: 'Shopify' },
+        { iconURL: '/icons/remix.svg', title: 'Remix' },
+      ],
       details: [
         'Creation and customization of themes',
         'Creation of highly customizable and accessible sites',
-        'Creation of private Shopify applications'
+        'Creation of private Shopify applications',
+        'Creaction of public Shopify applications',
       ]
     },
     otherTools: {
@@ -218,14 +227,24 @@ export const english = {
     description: 'I am constantly learning more about web design and development. Currently I am learning the following technologies and skills: ',
     items: [
       {
-        title: 'PHP',
-        iconURL: '/icons/php.svg',
-        description: 'PHP is one of the most important languages in web development and has a large community and tools that allow you to easily meet the needs of clients. I am getting involved in this great community learning the basics of the language to then start trying more complex tools that facilitate the development of new projects.'
+        title: 'C#',
+        iconURL: '/icons/csharp.svg',
+        description: 'C# is one of the languages most used in the development of desktop applications and video games. Currently I am learning C# to be able to develop desktop applications and video games.'
       },
       {
-        title: 'NESTJS',
-        iconURL: '/icons/nestjs.svg',
-        description: 'This is the JavaScript/TypeScript framework that I didn\'t know I needed. It offers a lot of solutions to create scalable server applications along with a very good development experience. It is definitely a great tool that is helping me improve as a developer, because as you learn NestJS you learn to write clean code.'
+        title: 'React Native',
+        iconURL: '/icons/react.svg',
+        description: 'React Native is a multiplatform mobile application development framework. Currently I am learning React Native to be able to develop mobile applications for Android and iOS.'
+      },
+      {
+        title: 'Amazon Web Services',
+        iconURL: '/icons/aws.svg',
+        description: 'Amazon Web Services is a cloud services platform that offers computing, storage, and database services. Currently I am learning AWS to be able to deploy scalable cloud applications.'
+      },
+      {
+        title: 'Astro',
+        iconURL: '/icons/astro.svg',
+        description: 'Astro is a website building tool that allows the creation of static and dynamic websites. Currently I am learning Astro to be able to create faster and optimized websites.'
       }
     ]
   },

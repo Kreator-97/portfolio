@@ -47,12 +47,12 @@ export const NextToLearn: FC<Props> = ({ lang }) => {
             <IconWithText size={64} title="Rust" iconURL={'/icons/rust.svg'} hasBackground/>
           </div>
 
-          <div className='absolute top-[calc(50%-40px)] -right-12 rotate-reverse'>
-            <IconWithText size={64} title="React Native" iconURL={'/icons/react-native.svg'} hasBackground/>
-          </div>
-
           <div className='absolute -bottom-12 left-[calc(50%-60px)] rotate-reverse'>
             <IconWithText size={64} title="Dart" iconURL={'/icons/dart.svg'} hasBackground/>
+          </div>
+
+          <div className='absolute top-[calc(50%-40px)] -right-12 rotate-reverse'>
+            <IconWithText size={54} title="Flutter" iconURL={'/icons/flutter-new.svg'} hasBackground />
           </div>
 
           <div className='absolute top-[calc(50%-40px)] -left-12 rotate-reverse'>
