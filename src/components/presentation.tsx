@@ -43,7 +43,9 @@ export const Presentation: FC<Props> = ({
           href='#projects'
           className='transition-colors bg-accent hover:bg-accentDark px-2 md:px-4 py-2 rounded-md font-bold text-light text-base md:text-xl hover:bg block text-center'
         >
-          Proyectos
+          {
+            t.proyects.title
+          }
         </a>
       </div>
     </div>

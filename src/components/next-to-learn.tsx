@@ -52,7 +52,7 @@ export const NextToLearn: FC<Props> = ({ lang }) => {
           </div>
 
           <div className='absolute top-[calc(50%-40px)] -right-12 rotate-reverse'>
-            <IconWithText size={54} title="Flutter" iconURL={'/icons/flutter-new.svg'} hasBackground />
+            <IconWithText size={54} title="Flutter" iconURL={'/icons/flutter.svg'} hasBackground />
           </div>
 
           <div className='absolute top-[calc(50%-40px)] -left-12 rotate-reverse'>
