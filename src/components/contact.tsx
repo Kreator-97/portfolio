@@ -1,30 +1,39 @@
 'use client'
 
-import { FormEvent, useState } from 'react'
+import { FC, FormEvent, useState } from 'react'
 import { Toaster, toast } from 'react-hot-toast'
 
 import { createContactRequest } from '../services/contact'
+import { Languages } from '@/interfaces/languages'
+import { useTranslations } from '@/hooks/use-translations'
 
-const placeholderMsg = 'Escribe tu mensaje'
 const initialSubject = 'work-puporsal'
 
-export const Contact = () => {
-  const [ email, setEmail ] = useState('')
-  const [ subject, setSubject ] = useState(initialSubject)
-  const [ message, setMessage ] = useState(placeholderMsg)
+interface Props {
+  lang: Languages
+}
 
+export const Contact: FC<Props> = () => {
+
+  const [ email, setEmail ] = useState('')
+  const { translations: t } = useTranslations()
+
+  const [ subject, setSubject ] = useState(initialSubject)
+  const placeholderMsg = t.contact.placeholders.message
+  const [ message, setMessage ] = useState(t.contact.placeholders.message)
+  
   const onSubmit = async (e:FormEvent) => {
     e.preventDefault()
 
     const required = [email, message, subject]
 
     if( required.some( value => value.trim() === '' || !value ) ) {
-      console.warn('Los campos son obligatorios')
+      console.warn('All fields are required')
       return
     }
 
     if( message === placeholderMsg ) {
-      console.warn('Por favor deja tu mensaje')
+      console.warn('Please write a message')
       return
     }
 
@@ -33,7 +42,7 @@ export const Contact = () => {
       setEmail('')
       setSubject(initialSubject)
       setMessage(placeholderMsg)
-      toast.success('Gracias por contactar conmigo')
+      toast.success('Thanks for contacting me! I will reply as soon as possible')
     } catch (error) {
       console.log(error)
     }
@@ -41,7 +50,11 @@ export const Contact = () => {
 
   return (
     <div className="bg-slate-100 dark:bg-slate-700 p-4 rounded w-full mx-auto mt-8 shadow-md" id="contact">
-      <h2 className="text-dark dark:text-light text-center font-bold">Contacta conmigo</h2>
+      <h2 className="text-dark dark:text-light text-center font-bold">
+        {
+          t.contact.title
+        }
+      </h2>
       <form className="pt-4 mx-auto max-w-2xl" onSubmit={onSubmit} >
         <select
           name="subject"
@@ -50,15 +63,35 @@ export const Contact = () => {
           onChange={ (e) => setSubject(e.target.value) }
           className='bg-slate-50 dark:bg-slate-600 text-dark dark:text-light w-full px-4 py-2 rounded mb-4 font-bold block shadow'
         >
-          <option value="work-purpose">Propuesta de trabajo</option>
-          <option value="collaboration">Colaboración</option>
-          <option value="personal-contact">Contacto Personal</option>
-          <option value="custom">Otros (descríbelo en el mensaje)</option>
+          <option value="work-purpose"
+          >
+            {
+              t.contact.options.workPurpose
+            }
+          </option>
+          <option value="collaboration"
+          >
+            {
+              t.contact.options.collaboration
+            }
+          </option>
+          <option value="personal-contact"
+          >
+            {
+              t.contact.options.personalContact
+            }
+          </option>
+          <option value="custom"
+          >
+            {
+              t.contact.options.custom
+            }
+          </option>
         </select>
         <input
           type="email"
           required
-          placeholder="Correo..."
+          placeholder={ t.contact.placeholders.email}
           className="bg-slate-50 dark:bg-slate-600 text-dark dark:text-light placeholder:text-dark dark:placeholder:text-light w-full px-4 py-2 rounded mb-4 font-bold shadow"
           onChange={ (e) => setEmail(e.target.value) }
           value={ email }
@@ -81,7 +114,9 @@ export const Contact = () => {
         >
         </textarea>
         <button className='bg-accent font-bold border border-accent text-light p-2 text-center w-full max-w-md mx-auto rounded block mt-4 transition-colors hover:bg-accentDark hover:border-light shadow'>
-          Enviar
+          {
+            t.contact.button
+          }
         </button>
       </form>
       <Toaster

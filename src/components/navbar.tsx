@@ -1,12 +1,15 @@
 'use client'
 
-import { UIContext } from '@/context/ui'
 import { useContext } from 'react'
+import { UIContext } from '@/context/ui'
 import { IoMenu } from 'react-icons/io5'
 import { MdDarkMode, MdOutlineLightMode } from 'react-icons/md'
 
-export const Navbar = () => {
+import { useTranslations } from '@/hooks/use-translations'
+
+export const Navbar= () => {
   const { openSidebar, toggleTheme, theme } = useContext(UIContext)
+  const { translations: t } = useTranslations()
 
   return (
     <nav
@@ -40,23 +43,33 @@ export const Navbar = () => {
         <ul className='hidden md:flex gap-4 text-dark dark:text-light font-bold'>
           <li
             className='transition-colors hover:text-accent'>
-            <a href="#home">Inicio</a>
+            <a href="#home">
+              { t.navbar.home }
+            </a>
           </li>
           <li
             className='transition-colors hover:text-accent'>
-            <a href="#skills">Habilidades</a>
+            <a href="#skills">
+              { t.navbar.skills }
+            </a>
           </li>
           <li
             className='transition-colors hover:text-accent'>
-            <a href="#projects">Proyectos</a>
+            <a href="#projects">
+              { t.navbar.projects }
+            </a>
           </li>
           <li
             className='transition-colors hover:text-accent'>
-            <a href="#learning">Aprendizaje</a>
+            <a href="#learning">
+              { t.navbar.learning }
+            </a>
           </li>
           <li
             className='transition-colors hover:text-accent'>
-            <a href="#contact">Contacto</a>
+            <a href="#contact">
+              { t.navbar.contact }
+            </a>
           </li>
         </ul>
         <div className='md:hidden'>

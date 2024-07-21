@@ -1,17 +1,40 @@
+import { Languages } from '@/interfaces/languages'
 import { IconWithText } from './'
+import { FC } from 'react'
+import { english, spanish } from '@/i18n'
 
-export const NextToLearn = () => {
+interface Props {
+  lang: Languages
+}
+
+export const NextToLearn: FC<Props> = ({ lang }) => {
+  const t = lang === 'es' ? spanish : english
   return (
     <div className='pt-8 md:pt-20 hidden lg:block'>
-      <h2 className='heading'>Por aprender en un futuro</h2>
+      <h2 className='heading'>
+        {
+          t.nextToLearn.title
+        }
+      </h2>
 
       <div className='grid grid-cols-1 gap-4'>
         <div className="custom-container col-span-1 md:col-span-2">
           <p className="paragraph">
-            Gran parte de mi tiempo está dedicado a aprender nuevas tecnologías y mantenerme actualizado.
+            {
+              t.nextToLearn.description
+            }
           </p>
           <p className="paragraph">
-            Tengo la habilidad de aprender y adaptarme a cualquier stack o requerimiento que sea necesario, aunque de forma personal hay algunas herramientas y tecnologías que me interesan aprender en un futuro ya sea para propósitos personales o laborales. <strong>Algunas tecnologías que me interesan aprender:</strong>
+            {
+              t.nextToLearn.description2
+            }
+          </p>
+          <p className='paragraph'>
+            <strong>
+              {
+                t.nextToLearn.description3
+              }
+            </strong>
           </p>
         </div>
 

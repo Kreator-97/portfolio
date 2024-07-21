@@ -1,37 +1,52 @@
+import { english, spanish } from '@/i18n'
 import { Card, IconWithText, List } from '.'
-import {
-  dockerSkills,
-  reactEcosystem,
-  serverSideSkills,
-  shopifySkills,
-  typeScriptSkills,
-  webTecnologies
-} from '../data'
 
-export const HardSkills = () => {
+export const HardSkills = ({lang}: { lang: string }) => {
+  const t = lang === 'es' ? spanish : english
+
   return (
     <div id='skills' className='pt-8 md:pt-20'>
-      <h2 className="heading">Habilidades Técnicas</h2>
+      <h2 className="heading">
+        { t.hardSkills.title }
+      </h2>
 
       <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
         <Card
-          title='Tecnologías Web'
-          description='Mis habilidades consisten en dominios avanzados de las  tecnologías web como lo son:'
+          title={ t.hardSkills.webTecnologies.title }
+          description={
+            t.hardSkills.webTecnologies.description
+          }
         >
           <div className='flex justify-center py-4 gap-8'>
-            <IconWithText iconURL={'/icons/html.svg'} title='HTML' />
-            <IconWithText iconURL={'/icons/css.svg'} title='CSS' />
-            <IconWithText iconURL={'/icons/javascript.svg'} title='JavaScript' />
+            {
+              t.hardSkills.webTecnologies.icons.map((icon) => (
+                <IconWithText
+                  key={icon.title}
+                  iconURL={icon.iconURL}
+                  title={icon.title}
+                />
+              ))
+            }
           </div>
 
-          <h3 className='text-dark dark:text-light text-center text-lg font-bold mb-2'>Competente en:</h3>
+          <h3 className='text-dark dark:text-light text-center text-lg font-bold mb-2'>
+            {
+              t.common.proficientIn
+            }
+          </h3>
 
-          <List items={ webTecnologies } />
+          <List
+            items={
+              t.hardSkills.webTecnologies.details
+            }
+          />
         </Card>
 
         <Card
-          title='Ecosistema de React'
-          description='Estoy especializado en la creación de interfaces de usuarios utilizando la librería de React y el ecosistema construído alrededor.'
+          title={ t.hardSkills.reactEcosystem.title }
+          description={
+            t.hardSkills.reactEcosystem.description
+          }
         >
           <div className='py-4 flex gap-8 justify-center'>
             <IconWithText iconURL={'/icons/react.svg'} title='React' />
@@ -39,77 +54,132 @@ export const HardSkills = () => {
             <IconWithText iconURL={'/icons/nextjs.svg'} title='NextJS' />
           </div>
           
-          <h3 className='text-dark dark:text-light text-center text-lg font-bold mb-2'>Competente en:</h3>
-
-          <List items={ reactEcosystem } />
+          <h3 className='text-dark dark:text-light text-center text-lg font-bold mb-2'>
+            {
+              t.common.proficientIn
+            }
+          </h3>
+          <List items={ t.hardSkills.reactEcosystem.details } />
         </Card>
 
         <Card
-          title='TypeScript'
-          description='Utilizo TypeScript en todos mis desarrollos debido a que proporciona una mejor experiencia de desarrollo, seguridad de tipos, mantenibilidad y escabilidad. '
+          title={ t.hardSkills.typescript.title }
+          description={
+            t.hardSkills.typescript.description
+          }
         >
           <div className='py-4 flex gap-8 justify-center'>
             <IconWithText iconURL={'/icons/typescript.svg'} title='TypeScript' />
           </div>
 
-          <h3 className='text-dark dark:text-light text-center text-lg font-bold mb-2'>Competente en:</h3>
+          <h3 className='text-dark dark:text-light text-center text-lg font-bold mb-2'>
+            {
+              t.common.proficientIn
+            }
+          </h3>
         
-          <List items={ typeScriptSkills } />
+          <List items={ t.hardSkills.typescript.details } />
         </Card>
 
         <Card
-          title='Aplicaciones del Servidor'
-          description='Tengo conocimiendos en la creación de servicios REST y GraphQL Server, utilizando NodeJS como Runtime para ejecutar mis aplicaciones de JavaScript.'
+          title={
+            t.hardSkills.serverApplications.title
+          }
+          description={
+            t.hardSkills.serverApplications.description
+          }
         >
           <div className='py-4 flex gap-8 justify-center'>
-            <IconWithText iconURL={'/icons/nodejs.svg'} title='Express' />
-            <IconWithText iconURL={'/icons/nextjs.svg'} title='NextJs' />
-            <IconWithText iconURL={'/icons/graphql.svg'} title='GraphQL' />
+            {
+              t.hardSkills.serverApplications.icons.map((icon) => (
+                <IconWithText
+                  key={icon.title}
+                  iconURL={icon.iconURL}
+                  title={icon.title}
+                />
+              ))
+            }
           </div>
+          <h3 className='text-dark dark:text-light text-center text-lg font-bold mb-2'>
+            {
+              t.common.proficientIn
+            }
+          </h3>
 
-          <h3 className='text-dark dark:text-light text-center text-lg font-bold mb-2'>Competente en:</h3>
-
-          <List items={ serverSideSkills } />
+          <List
+            items={
+              t.hardSkills.serverApplications.details
+            }
+          />
         </Card>
 
         <Card
-          title='Docker'
-          description='Utilizo docker a nivel básico - intermedio para tener separado mis entornos de desarrollo. Sigo estudiándolo para comenzar a utilizar la arquitectura de microservicios.'
+          title={
+            t.hardSkills.docker.title
+          }
+          description={
+            t.hardSkills.docker.description
+          }
         >
           <div className='py-4 flex gap-8 justify-center'>
-            <IconWithText iconURL={'/icons/docker.svg'} title='Docker' />
+            {
+              t.hardSkills.docker.icons.map((icon) => (
+                <IconWithText
+                  key={icon.title}
+                  iconURL={icon.iconURL}
+                  title={icon.title}
+                />
+              ))
+            }
           </div>
           
-          <h3 className='text-dark dark:text-light text-center text-lg font-bold mb-2'>Competente en:</h3>
+          <h3 className='text-dark dark:text-light text-center text-lg font-bold mb-2'>
+            {
+              t.common.proficientIn
+            }
+          </h3>
 
-          <List items={ dockerSkills } />
+          <List items={ t.hardSkills.docker.details } />
         </Card>
 
         <Card
-          title='Shopify'
-          description='Tengo experiencia profesional desarrollando soluciones de comercio electrónico para clientes que utilizan la plataforma de Shopify para su modelo de negocio.'
+          title={ t.hardSkills.shopify.title }
+          description={
+            t.hardSkills.shopify.description
+          }
         >
           <div className='py-4 flex gap-8 justify-center'>
             <IconWithText iconURL={'/icons/shopify.svg'} title='shopify' />
           </div>
           
-          <h3 className='text-dark dark:text-light text-center text-lg font-bold mb-2'>Competente en:</h3>
+          <h3 className='text-dark dark:text-light text-center text-lg font-bold mb-2'>
+            {
+              t.common.proficientIn
+            }
+          </h3>
 
-          <List items={ shopifySkills } />
+          <List items={ t.hardSkills.shopify.details } />
         </Card>
 
         <div className='col-span-1 md:col-span-2'>
           <Card
-            title='Otras Herramientas'
-            description='Como desarrollador web estas son algunas de las herramientas que utilizo cotidianamente para el desarrollo de mis aplicaciones.'
+            title={
+              t.hardSkills.otherTools.title
+            }
+            description={
+              t.hardSkills.otherTools.description
+            }
           >
             <div className='py-4 flex gap-x-8 gap-y-4 justify-center flex-wrap items-end'>
-              <IconWithText iconURL={'/icons/git.svg'} title='Git' />
-              <IconWithText iconURL={'/icons/yarn.svg'} title='Yarn' />
-              <IconWithText iconURL={'/icons/figma.svg'} title='Figma' size={36} />
-              <IconWithText iconURL={'/icons/vite.svg'} title='Vite' />
-              <IconWithText iconURL={'/icons/eslint.svg'} title='Eslint' />
-              <IconWithText iconURL={'/icons/vscode.svg'} title='VS Code' />
+              {
+                t.hardSkills.otherTools.items.map((item) => (
+                  <IconWithText
+                    key={item.title}
+                    iconURL={item.iconURL}
+                    title={item.title}
+                  />
+                ))
+              }
             </div>
           </Card>
         </div>

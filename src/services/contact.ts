@@ -5,7 +5,7 @@ interface Props {
 }
 
 export const createContactRequest = async ({email, message, subject}: Props) => {
-
+  // TODO: finish api endpoint for contact
   try {
     const url = '/api/contact'
     const res = await fetch(url, {

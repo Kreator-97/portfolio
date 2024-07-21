@@ -3,13 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --navbarSize: 64px;
-  --dark      : #292524;
-  --darkAlt   : #1c1917;
-  --light     : #eee;
-  --accent    : #fbbf24;
-  --accentDark: #a04c14;
-  --bgColor   : var(--dark);
+  --navbarSize  : 64px;
+  --dark        : #292524;
+  --darkAlt     : #1c1917;
+  --light       : #eee;
+  --accent      : #ecb016;
+  --accentDark  : #a04c14;
+  --accent-blue : #2d3e50;
+  --bgColor     : var(--dark);
   scroll-behavior: smooth;
 }
 

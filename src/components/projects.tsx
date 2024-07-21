@@ -1,53 +1,64 @@
-import { IconWithText, List, ProyectCard } from '.'
-import { auroraMangaFeatures, twittDuckComingFeatures, twittDuckFeatures, portfolioLinks } from '../data'
+import { FC } from 'react'
 
-const { auroraManga, dartmong, twittDuck } = portfolioLinks
+import { IconWithText, List, ProyectCard } from '@/components'
 
-export const Projects = () => {
+import { proyects } from '@/data'
+import { Languages } from '@/interfaces/languages'
+import { english, spanish } from '@/i18n'
+
+const { auroraManga, dartmong, twittDuck } = proyects
+
+interface Props {
+  lang: Languages
+}
+
+export const Projects: FC<Props> = ({ lang }) => {
+  const t = lang === 'es' ? spanish : english
+  
   return (
     <div id='projects' className="pt-8 md:pt-20">
       <div className="bg-indigo-900 bg-opacity-50 py-4">
-        <h2 className="text-center text-light font-bold text-3xl md:mb-8">Proyectos</h2>
+        <h2 className="text-center text-light font-bold text-3xl md:mb-8">
+          {
+            t.proyects.title
+          }
+        </h2>
 
         <ProyectCard
           imgURL={'/images/dartmong-blog.png'}
-          title={ dartmong.title }
+          title={ t.proyects.dartmong.title }
           url={ dartmong.url }
           repositoryURL={ dartmong.repositoryURL }
         >
           <p className='text-light font-bold mb-4'>
-            Este es sitio de entretemiento de temática principal sobre Videojuegos, pero también de Animes y Mangas. Se recopilan noticias y se escriben artículos a manera de opiniones personales y análisis.
+            {
+              t.proyects.dartmong.description
+            }
           </p>
 
           <p className='text-light font-bold mb-4'>
-            Es muy proyecto que pienso escalar a lo largo de tiempo, como un Hobby, y desarrollar todo el potencial que este pueda lograr.
+            {
+              t.proyects.dartmong.description2
+            }
           </p>
 
           <p className='text-light font-bold my-4 text-center'>
-            Está realizado con las siguientes tecnologías:
+            {
+              t.proyects.dartmong.description3
+            }
           </p>
 
           <div className='flex justify-center items-center'>
-            <IconWithText
-              title='NextJS'
-              iconURL={'/icons/chakraui.svg'}
-              hasBackground
-            />
-            <IconWithText
-              title='TypeScript'
-              iconURL={'/icons/typescript.svg'}
-              hasBackground
-            />
-            <IconWithText
-              title='SASS'
-              iconURL={'/icons/sass.svg'}
-              hasBackground
-            />
-            <IconWithText
-              title='MongoDB'
-              iconURL={'/icons/mongodb.svg'}
-              hasBackground
-            />
+            {
+              dartmong.technologies.map((tech) => (
+                <IconWithText
+                  key={tech.title}
+                  title={tech.title}
+                  iconURL={tech.iconURL}
+                  hasBackground
+                />
+              ))
+            }
           </div>
         </ProyectCard>
 
@@ -59,59 +70,45 @@ export const Projects = () => {
           reverse
         >
           <p className='text-light font-bold mb-4'>
-            Aurora manga es un sitio de E-commerce (fifticio) especializado en la venta de Mangas en el cual puedes conseguir tus títulos de mangas favoritos.
+            {
+              t.proyects.auroraManga.description
+            }
           </p>
 
           <p className='text-light font-bold mb-4'>
-            Los pagos son realizados utilizando la SDK de Paypal, con el cual puedes suscribirte a los lanzamientos del Mes con un pago recurrente o simplemente pagar los artículos de tu carrito de compra en una sola exhibición.
+            {
+              t.proyects.auroraManga.description2
+            }
           </p>
 
           <p className='text-accent font-bold mb-2'>
-            Características:
+            {
+              t.proyects.auroraManga.description3
+            }
           </p>
 
-          <List items={ auroraMangaFeatures } className='font-bold text-light mb-4' />
+          <List
+            items={ t.proyects.auroraManga.features }
+            className='font-bold text-light mb-4'
+          />
 
           <p className='text-light font-bold mb-4 text-center'>
-            Está realizado con las siguientes tecnologías:
+            {
+              t.proyects.auroraManga.description4
+            }
           </p>
 
           <div className='flex justify-center flex-wrap gap-y-4'>
-            <IconWithText
-              title='NextJS'
-              iconURL={'/icons/nextjs.svg'}
-              hasBackground
-            />
-            <IconWithText
-              title='TypeScript'
-              iconURL={'/icons/typescript.svg'}
-              hasBackground
-            />
-            <IconWithText
-              title='Tailwind'
-              iconURL={'/icons/tailwindcss.svg'}
-              hasBackground
-            />
-            <IconWithText
-              title='Redux'
-              iconURL={'/icons/redux.svg'}
-              hasBackground
-            />
-            <IconWithText
-              title='Prisma ORM'
-              iconURL={'/icons/prisma.svg'}
-              hasBackground
-            />
-            <IconWithText
-              title='MySQL'
-              iconURL={'/icons/mysql.svg'}
-              hasBackground
-            />
-            <IconWithText
-              title='GraphQL'
-              iconURL={'/icons/graphql.svg'}
-              hasBackground
-            />
+            {
+              auroraManga.technologies.map((tech) => (
+                <IconWithText
+                  key={tech.title}
+                  title={tech.title}
+                  iconURL={tech.iconURL}
+                  hasBackground
+                />
+              ))
+            }
           </div>
         </ProyectCard>
 
@@ -122,65 +119,47 @@ export const Projects = () => {
           repositoryURL={ twittDuck.repositoryURL }
         >
           <p className='text-light font-bold mb-4'>
-            Esta es una red social que te permite crear publicaciones, subir fotos, comentar y difundir las publicaciones de otros usuarios de forma similar a Twitter.
+            { t.proyects.twittDuck.description }
           </p>
 
           <p className='text-accent font-bold mb-2'>
-            Características:
+            {
+              t.proyects.twittDuck.description2
+            }
           </p>
 
-          <List items={ twittDuckFeatures } className='font-bold text-light mb-4' />
+          <List items={ t.proyects.twittDuck.features } className='font-bold text-light mb-4' />
 
           <p className='text-accent font-bold mb-2'>
-            Próximas Características:
+            {
+              t.proyects.twittDuck.description3
+            }
           </p>
 
-          <List items={ twittDuckComingFeatures } className='font-bold text-light mb-4' />
+          <List
+            items={ t.proyects.twittDuck.features2 }
+            className='font-bold text-light mb-4'
+          />
 
           <p className='text-light font-bold mb-4 text-center'>
-            Está realizado con las siguientes tecnologías:
+            {
+              t.proyects.twittDuck.description3
+            }
           </p>
 
           <div className='flex justify-center items-center flex-wrap gap-y-4'>
-            <IconWithText
-              title='ExpressJS'
-              iconURL={'/icons/nodejs.svg'}
-              hasBackground
-            />
-            <IconWithText
-              title='React'
-              iconURL={'/icons/chakraui.svg'}
-              hasBackground
-            />
-            <IconWithText
-              title='Redux'
-              iconURL={'/icons/redux.svg'}
-              hasBackground
-            />
-            <IconWithText
-              title='TypeScript'
-              iconURL={'/icons/typescript.svg'}
-              hasBackground
-            />
-            <IconWithText
-              title='Chakra UI'
-              iconURL={'/icons/chakraui.svg'}
-              hasBackground
-            />
-            <IconWithText
-              title='Turborepo'
-              iconURL={'/icons/turborepo.svg'}
-              hasBackground
-            />
-            <IconWithText
-              title='Prisma ORM'
-              iconURL={'/icons/prisma.svg'}
-              hasBackground
-            />
-
+            {
+              twittDuck.technologies.map((tech) => (
+                <IconWithText
+                  key={tech.title}
+                  title={tech.title}
+                  iconURL={tech.iconURL}
+                  hasBackground
+                />
+              ))
+            }
           </div>
         </ProyectCard>
-
       </div>
     </div>
   )

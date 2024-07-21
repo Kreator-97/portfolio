@@ -1,5 +1,4 @@
 'use client'
-
 import { createContext, FC, useEffect, useState } from 'react'
 
 interface INITIAL_STATE {
@@ -32,7 +31,6 @@ export const UIProvider: FC<Props> = ({children}) => {
   const [ state, setState ] = useState<INITIAL_STATE>(initial_state)
 
   useEffect(() => {
-    // define the theme
     const theme = (localStorage.getItem('theme') || 'dark') as Theme
 
     if( theme === 'dark' ) {
