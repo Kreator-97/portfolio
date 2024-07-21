@@ -3,9 +3,11 @@
 import { useContext } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import { UIContext } from '../context/ui'
+import { useTranslations } from '@/hooks/use-translations'
 
 export const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useContext(UIContext)
+  const { translations: t } = useTranslations()
 
   return (
     <aside
@@ -26,31 +28,41 @@ export const Sidebar = () => {
           className='text-xl mb-4 bg-darkAlt p-2 rounded text-center transition-colors hover:text-accent'
           onClick={ () => closeSidebar() }
         >
-          <a className='w-full block' href="#home">Inicio</a>
+          <a className='w-full block' href="#home">
+            { t.navbar.home }
+          </a>
         </li>
         <li
           className='text-xl mb-4 bg-darkAlt p-2 rounded text-center transition-colors hover:text-accent'
           onClick={ () => closeSidebar() }
         >
-          <a className='w-full block' href="#skills">Habilidades</a>
+          <a className='w-full block' href="#skills">
+            { t.navbar.skills }
+          </a>
         </li>
         <li
           className='text-xl mb-4 bg-darkAlt p-2 rounded text-center transition-colors hover:text-accent'
           onClick={ () => closeSidebar() }
         >
-          <a className='w-full block' href="#projects">Proyectos</a>
+          <a className='w-full block' href="#projects">
+            { t.navbar.projects }
+          </a>
         </li>
         <li
           className='text-xl mb-4 bg-darkAlt p-2 rounded text-center transition-colors hover:text-accent'
           onClick={ () => closeSidebar() }
         >
-          <a className='w-full block' href="#learning">Aprendizaje</a>
+          <a className='w-full block' href="#learning">
+            { t.navbar.learning }
+          </a>
         </li>
         <li
           className='text-xl mb-4 bg-darkAlt p-2 rounded text-center transition-colors hover:text-accent'
           onClick={ () => closeSidebar() }
         >
-          <a className='w-full block' href="#contact">Contacto</a>
+          <a className='w-full block' href="#contact">
+            { t.navbar.contact }
+          </a>
         </li>
       </ul>
     </aside>

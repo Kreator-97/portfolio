@@ -11,7 +11,7 @@ interface Props {
 
 export const IconWithText: FC<Props> = ({iconURL, title, size = 48, hasBackground = false, showText = true}) => {
   return (
-    <div className='flex flex-col items-center w-28 z-10'>
+    <div className='flex flex-col items-center w-24 z-10'>
       <div
         className={`rounded-full p-2 flex justify-center items-center ${hasBackground ? 'bg-slate-50' : '' }`}
         style={{ width: `calc(${size}px + .5rem)`, height: `calc(${size}px + .5rem)` }} >

@@ -14,7 +14,7 @@ export const english = {
   presentation: {
     title: 'Hi, I\'m',
     fullname: 'Donato Monzón',
-    subtitle: 'I am Frontend Developer'
+    subtitle: 'I am Full-Stack Developer'
   },
   aboutMe: {
     parragraphs: {

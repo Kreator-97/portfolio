@@ -14,7 +14,7 @@ export const spanish = {
   presentation: {
     title: 'Hola, soy',
     fullname: 'Donato Monzón',
-    subtitle: 'Soy Desarrollador Frontend'
+    subtitle: 'Soy Desarrollador Full-Stack',
   },
   aboutMe: {
     parragraphs: {
