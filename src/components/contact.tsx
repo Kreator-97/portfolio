@@ -3,22 +3,22 @@
 import { FC, FormEvent, useState } from 'react'
 import { Toaster, toast } from 'react-hot-toast'
 
-import { createContactRequest } from '../services/contact'
-import { Languages } from '@/interfaces/languages'
-import { useTranslations } from '@/hooks/use-translations'
+import { Subject } from '@prisma/client'
 
-const initialSubject = 'work-puporsal'
+import { isEmail } from '@/utils/validations'
+import { Languages } from '@/interfaces/languages'
+import { saveContact } from '@/actions/contact'
+import { useTranslations } from '@/hooks/use-translations'
 
 interface Props {
   lang: Languages
 }
 
 export const Contact: FC<Props> = () => {
-
   const [ email, setEmail ] = useState('')
   const { translations: t } = useTranslations()
 
-  const [ subject, setSubject ] = useState(initialSubject)
+  const [ subject, setSubject ] = useState<Subject>(Subject.WORK_PURPOSE)
   const placeholderMsg = t.contact.placeholders.message
   const [ message, setMessage ] = useState(t.contact.placeholders.message)
   
@@ -29,22 +29,40 @@ export const Contact: FC<Props> = () => {
 
     if( required.some( value => value.trim() === '' || !value ) ) {
       console.warn('All fields are required')
-      return
+      return toast.error('All fields are required')
+    }
+
+    if( !isEmail(email) ) {
+      console.warn('Please write a valid email')
+      return toast.error('Please write a valid email')
+    }
+
+    if( message.trim().length < 10 ) {
+      return toast.error('Write a longer message')
     }
 
     if( message === placeholderMsg ) {
       console.warn('Please write a message')
-      return
+
+      return toast.error('Please write a message')
     }
 
     try {
-      await createContactRequest({ email, subject, message })
+      const contact = await saveContact({
+        subject,
+        email,
+        message,
+      })
+      console.log({ contact })
+      
       setEmail('')
-      setSubject(initialSubject)
-      setMessage(placeholderMsg)
-      toast.success('Thanks for contacting me! I will reply as soon as possible')
-    } catch (error) {
-      console.log(error)
+      setMessage('')
+      setSubject(Subject.WORK_PURPOSE)
+
+      return toast.success('Message sent successfully')
+    } catch(error) {
+      console.error(error)
+      return toast.error('An error occurred')
     }
   }
 
@@ -60,28 +78,28 @@ export const Contact: FC<Props> = () => {
           name="subject"
           id="suject"
           defaultValue={ subject}
-          onChange={ (e) => setSubject(e.target.value) }
+          onChange={ (e) => setSubject(e.target.value as Subject) }
           className='bg-slate-50 dark:bg-slate-600 text-dark dark:text-light w-full px-4 py-2 rounded mb-4 font-bold block shadow'
         >
-          <option value="work-purpose"
+          <option value={Subject.WORK_PURPOSE}
           >
             {
               t.contact.options.workPurpose
             }
           </option>
-          <option value="collaboration"
+          <option value={Subject.COLLABORATION}
           >
             {
               t.contact.options.collaboration
             }
           </option>
-          <option value="personal-contact"
+          <option value={Subject.PERSONAL_CONTACT}
           >
             {
               t.contact.options.personalContact
             }
           </option>
-          <option value="custom"
+          <option value={Subject.OTHER}
           >
             {
               t.contact.options.custom
@@ -125,7 +143,10 @@ export const Contact: FC<Props> = () => {
           icon: '⭐',
           position: 'top-center',
           duration: 3000,
-          style: { fontWeight: 700 }
+          style: { fontWeight: 700 },
+          error: {
+            icon: '❌',
+          }
         }}
       />
     </div>

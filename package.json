@@ -6,12 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "studio": "prisma studio --browser none"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.4",
+    "@prisma/client": "^5.17.0",
     "negotiator": "^0.6.3",
     "next": "14.2.4",
+    "prisma": "^5.17.0",
     "react": "^18",
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",

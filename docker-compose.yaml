@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  development-db:
+    image: postgres:16.1
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: super-password-root
+      POSTGRES_USER: root
+      POSTGRES_DB: development
+  testing-db:
+    image: postgres:16.1
+    ports:
+      - 5433:5432
+    volumes:
+      - ./data-test:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: super-password-root
+      POSTGRES_USER: root
+      POSTGRES_DB: testing
