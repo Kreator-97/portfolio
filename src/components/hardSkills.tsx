@@ -48,7 +48,7 @@ export const HardSkills = ({lang}: { lang: string }) => {
             t.hardSkills.reactEcosystem.description
           }
         >
-          <div className='py-4 flex gap-8 justify-center'>
+          <div className='py-4 flex gap-8 justify-center flex-wrap'>
             {
               t.hardSkills.reactEcosystem.icons.map((icon) => (
                 <IconWithText
@@ -95,7 +95,7 @@ export const HardSkills = ({lang}: { lang: string }) => {
             t.hardSkills.serverApplications.description
           }
         >
-          <div className='py-4 flex gap-8 justify-center'>
+          <div className='py-4 flex gap-8 justify-center flex-wrap'>
             {
               t.hardSkills.serverApplications.icons.map((icon) => (
                 <IconWithText

@@ -9,7 +9,7 @@ export const LanguageWidget = () => {
 
   return (
     <div
-      className="fixed bottom-0 right-0 p-4 bg-slate-200 dark:bg-slate-700 bg-opacity-80 rounded-tl-lg flex flex-col gap-4"
+      className="fixed bottom-0 right-0 p-4 bg-slate-200 dark:bg-slate-700 bg-opacity-80 rounded-tl-lg flex flex-col gap-4 z-10"
     >
       <button
         onClick={() => {
@@ -24,7 +24,7 @@ export const LanguageWidget = () => {
           height={64}
           className={
             `
-              transition-opacity
+              w-[48px] lg:w-[64px] transition-opacity
               ${ lang === 'es' ? 'opacity-100 border-2 border-accent rounded-full' : 'opacity-50'}
             `
           }
@@ -44,7 +44,7 @@ export const LanguageWidget = () => {
           height={64}
           className={
             `
-              transition-opacity
+              w-[48px] lg:w-[64px] transition-opacity
               ${ lang === 'en' ? 'opacity-100 border-2 border-accent rounded-full' : 'opacity-30'}
             `
           }
