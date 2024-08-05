@@ -22,7 +22,7 @@ interface Link {
 export const proyects: ProyectDetail = {
   dartmong: {
     title: 'Dartmong Blog',
-    url: 'https://dartmong.com',
+    url: 'https://dartmong-next.vercel.app/',
     technologies: [
       { title: 'NextJS', iconURL: '/icons/nextjs.svg' },
       { title: 'TypeScript', iconURL: '/icons/typescript.svg' },
@@ -94,6 +94,28 @@ export const proyects: ProyectDetail = {
       },
     ]
   },
+  retoCardio: {
+    title: 'Reto Cardiología (frontend)',
+    url: 'https://retocardiologia.com/',
+    technologies: [
+      {
+        title: 'NextJS',
+        iconURL: '/icons/nextjs.svg',
+      },
+      {
+        title: 'TypeScript',
+        iconURL: '/icons/typescript.svg',
+      },
+      {
+        title: 'TailwindCSS',
+        iconURL: '/icons/tailwindcss.svg',
+      },
+      {
+        title: 'React query',
+        iconURL: '/icons/prisma.svg',
+      },
+    ]
+  }
 }
 
 export const personalLinks: ExternalLinks = {

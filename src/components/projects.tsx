@@ -6,7 +6,7 @@ import { proyects } from '@/data'
 import { Languages } from '@/interfaces/languages'
 import { english, spanish } from '@/i18n'
 
-const { auroraManga, dartmong, twittDuck } = proyects
+const { auroraManga, dartmong, twittDuck, retoCardio } = proyects
 
 interface Props {
   lang: Languages
@@ -14,10 +14,10 @@ interface Props {
 
 export const Projects: FC<Props> = ({ lang }) => {
   const t = lang === 'es' ? spanish : english
-  
+
   return (
     <div id='projects' className="pt-8 md:pt-20">
-      <div className="bg-indigo-900 bg-opacity-50 py-4">
+      <div className="bg-indigo-900 bg-opacity-50 pt-4">
         <h2 className="text-center text-light font-bold text-3xl md:mb-8">
           {
             t.proyects.title
@@ -159,6 +159,27 @@ export const Projects: FC<Props> = ({ lang }) => {
               ))
             }
           </div>
+        </ProyectCard>
+
+        <ProyectCard
+          imgURL={ '/images/reto-cardio.png' }
+          title={ retoCardio.title }
+          url={ retoCardio.url }
+          repositoryURL={ retoCardio.repositoryURL }
+          reverse
+        >
+          <p className='text-light font-bold mb-4'>
+            { t.proyects.retoCardio.description }
+          </p>
+
+          <p className='text-accent font-bold mb-2'>
+            {
+              t.proyects.retoCardio.description2
+            }
+          </p>
+
+          <List items={ t.proyects.retoCardio.features } className='font-bold text-light mb-4' />
+
         </ProyectCard>
       </div>
     </div>

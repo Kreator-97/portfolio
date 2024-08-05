@@ -221,6 +221,19 @@ export const spanish = {
         'Mensajes privados',
       ],
     },
+    retoCardio: {
+      title: 'Reto Cardio (frontend)',
+      description: 'Esta es un sitio web que permite mantener informados a los médicos cardíologos México sobre nuevos eventos, noticias y avances en la medicina cardiovascular.',
+      description2: 'Características:',
+      features: [
+        'Landing page informativa para promocionar la App móvil',
+        'Consumo de API rest para obtener noticias y eventos',
+        'Formulario de contacto',
+        'Sección de noticias',
+        'Sección de eventos',
+        'Sección de bolsa de empleo'
+      ],
+    }
   },
   learning: {
     title: 'Aprendizaje',

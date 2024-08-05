@@ -220,6 +220,19 @@ export const english = {
         'Trending section within the network',
         'Private messages',
       ],
+    },
+    retoCardio: {
+      title: 'Reto Cardio (frontend)',
+      description: 'This is a website that allows Mexican cardiologists to be informed about new events, news and advances in cardiovascular medicine.',
+      description2: 'Features:',
+      features: [
+        'Informative landing page to promote the mobile App',
+        'Consumption of rest API to obtain news and events',
+        'Contact form',
+        'News section',
+        'Events section',
+        'Job board section'
+      ],
     }
   },
   learning: {
