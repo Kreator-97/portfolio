@@ -17,13 +17,14 @@ export const HardSkills = ({lang}: { lang: string }) => {
             t.hardSkills.webTecnologies.description
           }
         >
-          <div className='flex justify-center py-4 gap-8'>
+          <div className='flex justify-center py-4 gap-8 '>
             {
               t.hardSkills.webTecnologies.icons.map((icon) => (
                 <IconWithText
                   key={icon.title}
                   iconURL={icon.iconURL}
                   title={icon.title}
+                  size={32}
                 />
               ))
             }
@@ -48,13 +49,14 @@ export const HardSkills = ({lang}: { lang: string }) => {
             t.hardSkills.reactEcosystem.description
           }
         >
-          <div className='py-4 flex gap-8 justify-center flex-wrap'>
+          <div className='py-4 flex gap-2 justify-center flex-wrap'>
             {
               t.hardSkills.reactEcosystem.icons.map((icon) => (
                 <IconWithText
                   key={icon.title}
                   iconURL={icon.iconURL}
                   title={icon.title}
+                  size={32}
                 />
               ))
             }
@@ -75,7 +77,11 @@ export const HardSkills = ({lang}: { lang: string }) => {
           }
         >
           <div className='py-4 flex gap-8 justify-center'>
-            <IconWithText iconURL={'/icons/typescript.svg'} title='TypeScript' />
+            <IconWithText
+              iconURL={'/icons/typescript.svg'}
+              title='TypeScript'
+              size={32}
+            />
           </div>
 
           <h3 className='text-dark dark:text-light text-center text-lg font-bold mb-2'>
@@ -102,6 +108,7 @@ export const HardSkills = ({lang}: { lang: string }) => {
                   key={icon.title}
                   iconURL={icon.iconURL}
                   title={icon.title}
+                  size={32}
                 />
               ))
             }
@@ -134,6 +141,7 @@ export const HardSkills = ({lang}: { lang: string }) => {
                   key={icon.title}
                   iconURL={icon.iconURL}
                   title={icon.title}
+                  size={32}
                 />
               ))
             }
@@ -161,10 +169,10 @@ export const HardSkills = ({lang}: { lang: string }) => {
                   key={icon.title}
                   iconURL={icon.iconURL}
                   title={icon.title}
+                  size={32}
                 />
               ))
             }
-            {/* <IconWithText iconURL={'/icons/shopify.svg'} title='shopify' /> */}
           </div>
           
           <h3 className='text-dark dark:text-light text-center text-lg font-bold mb-2'>
@@ -192,6 +200,7 @@ export const HardSkills = ({lang}: { lang: string }) => {
                     key={item.title}
                     iconURL={item.iconURL}
                     title={item.title}
+                    size={32}
                   />
                 ))
               }
